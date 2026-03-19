@@ -10,20 +10,20 @@ feature/fix-style
 
 ## 作業手順
 
-1. developを最新にする
-git switch develop
+1. developを最新にする<br>
+git switch develop<br>
 git pull origin develop
 
-2. 作業ブランチ作成
+2. 作業ブランチ作成<br>
 git switch -c feature/xxx
 
 3. 作業
 
-4. add & commit
-git add .
+4. add & commit<br>
+git add .<br>
 git commit -m "内容"
 
-5. push
+5. push<br>
 git push origin feature/xxx
 
 6. PR作成
