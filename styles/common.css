@@ -1,0 +1,34 @@
+body{
+    min-height:100vh;
+    background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);/*背景のグラデーション*/
+    margin: 0;
+    font-family: "Yuji Syuku", serif;
+    color: #dc3545;
+}
+
+.page-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hidden{
+    display: none !important; /*hiddenクラスを入れると表示されなくなる、表示したいときはhiddenクラスを消す*/
+}
+
+
+
+.omikuji-frame{ /*おみくじの赤フレーム*/
+    width: 280px;
+
+    border: thick double red;
+    outline: 0.2rem solid red;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: white;
+    box-sizing: border-box;
+}
