@@ -16,7 +16,7 @@ body{
 
 }
 
-.back-btn{ /*戻るボタンや、もう一度おみくじを引くボタンなどに使ってください*/
+.btn{ /*ボタンレイアウトです。戻るボタンや、もう一度おみくじを引くボタンなどに使ってください*/
     display: inline-block;
     text-decoration: none;
 
@@ -26,7 +26,7 @@ body{
     border-radius: 20px;
     transition: 0.3s;
 }
-.back-btn:hover{
+.btn:hover{
     background-color: #c0392b;
 }
 
