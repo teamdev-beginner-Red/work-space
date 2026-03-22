@@ -62,8 +62,8 @@ function makeOmikuji(omikuji){
     let luckyEditaContent = document.createELement("p");
     luckyEditaContent = omikuji.luckyEdita;
 
-    luckyEditaDiv.append(omikujiLuckyDatabase);
-    luckyEditaDiv.append(omikujiLuckyDatabaseContent);
+    luckyEditaDiv.append(luckyEdita);
+    luckyEditaDiv.append(luckyEditaContent);
 
 
     //omikujiDivにそれぞれappendする
