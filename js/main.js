@@ -1,11 +1,11 @@
-function makeOmikuji(omikuji){
-    let omikujiDiv = document.createDiv("div");
-    
+function makeOmikuji(omikuji) {
+    let omikujiDiv = document.createElement("div");
+
     //おみくじの運勢
     let fortuneDiv = document.createElement("div");
-    
+
     let fortune = document.createElement("h1");
-    fortune.innerHTML = omikuji.fortune;
+    fortune = omikuji.fortune;
 
     //おみくじの画像
     let imgUrl = document.createElement("img");
@@ -16,12 +16,12 @@ function makeOmikuji(omikuji){
 
 
     //おみくじの内容
-    let contentDiv = document.createElement("div");
+    let contentDiv = document.createElemet("div");
 
-    let content = document.createElement("p");
-    content.innerHTML = omikuji.content;
+    let content = document.createELement("p");
+    content = omikuji.content;
 
-    contentDiv.append(content);
+    contentDiv.append(omikujiContent);
 
 
 
@@ -29,10 +29,10 @@ function makeOmikuji(omikuji){
     let luckyLangDiv = document.createElement("div");
     //タイトル
     let luckyLang = document.createElement("h4");
-    luckyLang.innerHTML = "ラッキー言語";
+    luckyLang = "ラッキー言語";
     //内容
     let luckyLangContent = document.createElement("p");
-    luckyLangContent.innerHTML = omikuji.luckyLang;//内容
+    luckyLangContent = omikuji.luckyLang;//内容
 
     luckyLangDiv.append(luckyLang);
     luckyLangDiv.append(luckyLangContent);
@@ -40,13 +40,13 @@ function makeOmikuji(omikuji){
 
 
     //ラッキーデータベース
-    let luckyDatabaseDiv = document.createElement("div");   
+    let luckyDatabaseDiv = document.createElement("div");
     //タイトル
     let luckyDatabase = document.createElement("h4");
-    luckyDatabase.innerHTML = "ラッキーデータベース";
+    luckyDatabase = "ラッキーデータベース";
     //内容
-    let luckyDatabaseContent = document.createElement("p");
-    luckyDatabaseContent.innerHTML = omikuji.luckyDatabase;
+    let luckyDatabaseContent = document.createELement("p");
+    luckyDatabaseContent = omikuji.luckyDatabase;
 
     luckyDatabaseDiv.append(luckyDatabase);
     luckyDatabaseDiv.append(luckyDatabaseContent);
@@ -54,13 +54,13 @@ function makeOmikuji(omikuji){
 
 
     //ラッキーエディタ
-    let luckyEditaDiv = document.createElement("div");  
+    let luckyEditaDiv = document.createElement("div");
     //タイトル
     let luckyEdita = document.createElement("h4");
-    luckyEdita.innerHTML = "ラッキーエディタ";
+    luckyEdita = "ラッキーエディタ";
     //内容
-    let luckyEditaContent = document.createElement("p");
-    luckyEditaContent.innerHTML = omikuji.luckyEdita;
+    let luckyEditaContent = document.createELement("p");
+    luckyEditaContent = omikuji.luckyEdita;
 
     luckyEditaDiv.append(luckyEdita);
     luckyEditaDiv.append(luckyEditaContent);
@@ -82,12 +82,41 @@ const omikujiResult = document.getElementById("result-page");
 //おみくじクラス
 class omikuji {
     //コンストラクタ
-    constructor (fortune , imgUrl , content , luckyLang , luckyDatabase , luckyEdita){
-        this.fortune = fortune;
-        this.imgUrl = imgUrl;
-        this.content = content;
-        this.luckyLang = luckyLang;
-        this.luckyDatabase = luckyDatabase;
-        this.luckyEdita = luckyEdita;
+    constructor() {
+        this.fortune = this.getFortune(getRandomNumber(7));
+        this.luckyLang = this.getLuckyLang(getRandomNumber(8));
+        this.luckyDatabase = this.getLuckyDatabase(getRandomNumber(5));
+        this.luckyEdita = this.getLuckyEdita(getRandomNumber(5));
+    }
+
+    // 配列形式運勢
+    getFortune(number) {
+        const fortunes = ["大吉", "吉", "中吉", "小吉", "末吉", "凶", "大凶"];
+        return fortunes[number];
+    }
+
+    // 配列形式言語
+    getLuckyLang(number) {
+        const langs = ['C++', 'Java', 'Python', 'PHP', 'TypeScript', 'Ruby', 'C♯', 'JavaScript'];
+        return langs[number];
+    }
+
+    // 配列形式データベース
+    getLuckyDatabase(number) {
+        const databases = ['Oracle Database', 'SQL Server', 'DB2', 'PostgreSQL', 'MySQL'];
+        return databases[number];
+    }
+
+    // 配列形式エディタ
+    getLuckyEdita(number) {
+        const editors = ['Emacs', 'Vim', 'Atom', 'nano', 'Visual Studio Code'];
+        return editors[number];
     }
 }
+
+// ランダムな整数を返す関数
+function getRandomNumber(max) {
+    return Math.floor(Math.random() * max);
+}
+
+
