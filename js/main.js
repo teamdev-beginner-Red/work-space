@@ -5,7 +5,7 @@ function makeOmikuji(omikuji) {
     let fortuneDiv = document.createElement("div");
 
     let fortune = document.createElement("h1");
-    fortune = omikuji.fortune;
+    fortune.innerHTML = omikuji.fortune;
 
     //おみくじの画像
     let imgUrl = document.createElement("img");
@@ -16,12 +16,12 @@ function makeOmikuji(omikuji) {
 
 
     //おみくじの内容
-    let contentDiv = document.createElemet("div");
+    let contentDiv = document.createElement("div");
 
-    let content = document.createELement("p");
-    content = omikuji.content;
+    let content = document.createElement("p");
+    content.innerHTML = omikuji.content;
 
-    contentDiv.append(omikujiContent);
+    contentDiv.append(content);
 
 
 
@@ -29,10 +29,10 @@ function makeOmikuji(omikuji) {
     let luckyLangDiv = document.createElement("div");
     //タイトル
     let luckyLang = document.createElement("h4");
-    luckyLang = "ラッキー言語";
+    luckyLang.innerHTML = "ラッキー言語";
     //内容
     let luckyLangContent = document.createElement("p");
-    luckyLangContent = omikuji.luckyLang;//内容
+    luckyLangContent.innerHTML = omikuji.luckyLang;//内容
 
     luckyLangDiv.append(luckyLang);
     luckyLangDiv.append(luckyLangContent);
@@ -43,10 +43,10 @@ function makeOmikuji(omikuji) {
     let luckyDatabaseDiv = document.createElement("div");
     //タイトル
     let luckyDatabase = document.createElement("h4");
-    luckyDatabase = "ラッキーデータベース";
+    luckyDatabase.innerHTML = "ラッキーデータベース";
     //内容
-    let luckyDatabaseContent = document.createELement("p");
-    luckyDatabaseContent = omikuji.luckyDatabase;
+    let luckyDatabaseContent = document.createElement("p");
+    luckyDatabaseContent.innerHTML = omikuji.luckyDatabase;
 
     luckyDatabaseDiv.append(luckyDatabase);
     luckyDatabaseDiv.append(luckyDatabaseContent);
@@ -57,10 +57,10 @@ function makeOmikuji(omikuji) {
     let luckyEditaDiv = document.createElement("div");
     //タイトル
     let luckyEdita = document.createElement("h4");
-    luckyEdita = "ラッキーエディタ";
+    luckyEdita.innerHTML = "ラッキーエディタ";
     //内容
-    let luckyEditaContent = document.createELement("p");
-    luckyEditaContent = omikuji.luckyEdita;
+    let luckyEditaContent = document.createElement("p");
+    luckyEditaContent.innerHTML = omikuji.luckyEdita;
 
     luckyEditaDiv.append(luckyEdita);
     luckyEditaDiv.append(luckyEditaContent);
@@ -83,34 +83,34 @@ const omikujiResult = document.getElementById("result-page");
 class omikuji {
     //コンストラクタ
     constructor() {
-        this.fortune = this.getFortune(getRandomNumber(7));
-        this.luckyLang = this.getLuckyLang(getRandomNumber(8));
-        this.luckyDatabase = this.getLuckyDatabase(getRandomNumber(5));
-        this.luckyEdita = this.getLuckyEdita(getRandomNumber(5));
+        this.fortune = this.getFortune();
+        this.luckyLang = this.getLuckyLang();
+        this.luckyDatabase = this.getLuckyDatabase();
+        this.luckyEdita = this.getLuckyEdita();
     }
 
     // 配列形式運勢
     getFortune(number) {
         const fortunes = ["大吉", "吉", "中吉", "小吉", "末吉", "凶", "大凶"];
-        return fortunes[number];
+        return fortunes[getRandomNumber(fortunes.length)];
     }
 
     // 配列形式言語
     getLuckyLang(number) {
         const langs = ['C++', 'Java', 'Python', 'PHP', 'TypeScript', 'Ruby', 'C♯', 'JavaScript'];
-        return langs[number];
+        return langs[getRandomNumber(langs.length)];
     }
 
     // 配列形式データベース
     getLuckyDatabase(number) {
         const databases = ['Oracle Database', 'SQL Server', 'DB2', 'PostgreSQL', 'MySQL'];
-        return databases[number];
+        return databases[getRandomNumber(databases.length)];
     }
 
     // 配列形式エディタ
     getLuckyEdita(number) {
         const editors = ['Emacs', 'Vim', 'Atom', 'nano', 'Visual Studio Code'];
-        return editors[number];
+        return editors[getRandomNumber(editors.length)];
     }
 }
 
