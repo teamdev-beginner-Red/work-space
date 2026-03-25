@@ -77,21 +77,27 @@ ul.about a:hover{
 }
 
 
-footer.about p{
+footer p{
     font-size: 8px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 ul.developers{
-    text-align: center;
-    padding-left: 0;
+    text-align: left;
+    padding-left: 24px;
     margin: 0;
-    list-style-position: inside;
-    list-style-type: none;
-
+    list-style-type: square;
 }
 
 ul.developers li{
     line-height: 1.7em;
     margin-bottom: 8px;
+}
+
+ul.developers a{
+    text-decoration: none;
+}
+
+ul.developers a:hover{
+    text-decoration: none;
 }
