@@ -92,12 +92,7 @@ footer p{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-ul.developers{
-    text-align: left;
-    padding-left: 24px;
-    margin: 0;
-    list-style-type: square;
-}
+
 
 ul.developers li{
     line-height: 1.7em;
