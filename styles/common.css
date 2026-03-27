@@ -45,7 +45,7 @@ body{
 
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
 
     background-color: white;
     box-sizing: border-box;
