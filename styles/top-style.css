@@ -1,0 +1,7 @@
+/* おみくじ画像を小さくする */
+.omikuji-image {
+    width: 200px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 中央寄せ */
+}
