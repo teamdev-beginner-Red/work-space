@@ -1,22 +1,26 @@
-body{
-    min-height:100vh;
-    background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);/*背景のグラデーション*/
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
+    /*背景のグラデーション*/
     margin: 0;
     font-family: "Yuji Syuku", serif;
     color: #dc3545;
 }
 
-.page-container{
+.page-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    flex-direction: column; /*おみくじとボタンを縦並びにするため*/
-    gap: 20px; /*戻るボタンとomikuji-frameの間隔確保*/
+    flex-direction: column;
+    /*おみくじとボタンを縦並びにするため*/
+    gap: 20px;
+    /*戻るボタンとomikuji-frameの間隔確保*/
 
 }
 
-.btn{ /*ボタンレイアウトです。戻るボタンや、もう一度おみくじを引くボタンなどに使ってください*/
+.btn {
+    /*ボタンレイアウトです。戻るボタンや、もう一度おみくじを引くボタンなどに使ってください*/
     display: inline-block;
     text-decoration: none;
 
@@ -25,19 +29,23 @@ body{
     padding: 7px 15px;
     border-radius: 20px;
     transition: 0.3s;
+    cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #c0392b;
 }
 
 
-.hidden{
-    display: none !important; /*hiddenクラスを入れると表示されなくなる、表示したいときはhiddenクラスを消す*/
+.hidden {
+    display: none !important;
+    /*hiddenクラスを入れると表示されなくなる、表示したいときはhiddenクラスを消す*/
 }
 
 
 
-.omikuji-frame{ /*おみくじの赤フレーム*/
+.omikuji-frame {
+    /*おみくじの赤フレーム*/
     width: 280px;
 
     border: thick double red;
@@ -45,7 +53,7 @@ body{
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
 
     background-color: white;
     box-sizing: border-box;
@@ -64,15 +72,17 @@ ul.about, ul.developers{
     list-style-type: square;
 
 }
-ul.about li{
+
+ul.about li {
     line-height: 1.7em;
     margin-bottom: 8px;
 }
-ul.about a{
+
+ul.about a {
     text-decoration: none;
 }
 
-ul.about a:hover{
+ul.about a:hover {
     text-decoration: none;
 }
 
@@ -100,4 +110,26 @@ ul.developers a{
 
 ul.developers a:hover{
     text-decoration: none;
+}
+/* 結果ページ */
+#result-page h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+#result-page img {
+    width: 150px;
+    margin: 10px auto;
+}
+
+#result-page p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 4px 0;
+}
+
+#result-page h4 {
+    font-size: 0.9rem;
+    margin: 12px 0 2px;
+    border-bottom: 1px solid #dc3545;
 }
