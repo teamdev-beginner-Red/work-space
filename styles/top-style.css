@@ -21,3 +21,26 @@
     cursor: pointer;
     margin: 0;
 }
+
+/* タイトルと画像の間に余白 */
+h1 {
+    margin-bottom: 30px;
+}
+
+/* おみくじ画像の上下に余白 */
+.omikuji-image {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 30px auto; /* ← 上下に余白追加 */
+}
+
+/* ボタンの上に余白 */
+.button-area {
+    margin-top: 20px;
+}
+
+/* リンクエリアの上に余白 */
+.link-area {
+    margin-top: 15px;
+}
