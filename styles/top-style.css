@@ -44,3 +44,16 @@ h1 {
 .link-area {
     margin-top: 15px;
 }
+
+/* おみくじ箱が揺れるアニメーション */
+.omikuji-image.shake{
+    animation: omikujiShake 0.6s ease;
+}
+@keyframes omikujiShake {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(-10deg)}
+    40% {transform: rotate(10deg)}
+    60% {transform: rotate(-8deg)}
+    80% {transform: rotate(8deg)}
+    100% {transform: rotate(0deg)}
+}

@@ -70,6 +70,10 @@ function makeOmikuji(omikuji) {
     retryButton.innerHTML = "もう一度引く";
     retryButton.classList.add("btn");
     retryButton.addEventListener("click", function () {
+        // topPageに戻る前にshakeクラスを取り除いておく。（戻った時に揺れてしまうため）
+        const omikujiImg = document.querySelector(".omikuji-image");
+        omikujiImg.classList.remove("shake");
+
         topPage.classList.remove("hidden");
         resultPage.classList.add("hidden");
     });
@@ -159,18 +163,27 @@ function getRandomNumber(max) {
 const topPage = document.getElementById("top-page");
 const resultPage = document.getElementById("result-page");
 const drawButton = document.getElementById("draw-button");
+const omikujiImg = document.querySelector(".omikuji-image");
 
 // おみくじを引く処理
 drawButton.addEventListener("click", function () {
-    // おみくじのインスタンス作成
-    const myOmikuji = new omikuji();
-    // 結果のHTML要素を組み立て
-    const omikujiElement = makeOmikuji(myOmikuji);
-    // 結果ページの中身をクリアし、新しい結果を入れる
-    resultPage.innerHTML = "";
-    resultPage.appendChild(omikujiElement);
-    //トップページを隠して、結果ページを表示
-    topPage.classList.add("hidden");
-    resultPage.classList.remove("hidden");
+    // おみくじ画像を揺らす処理
+    omikujiImg.classList.remove("shake");
+    void omikujiImg.offsetWidth;
+    omikujiImg.classList.add("shake");
+    setTimeout(function(){
+        // おみくじのインスタンス作成
+        const myOmikuji = new omikuji();
+        // 結果のHTML要素を組み立て
+        const omikujiElement = makeOmikuji(myOmikuji);
+        // 結果ページの中身をクリアし、新しい結果を入れる
+        resultPage.innerHTML = "";
+        resultPage.appendChild(omikujiElement);
+        //トップページを隠して、結果ページを表示
+        topPage.classList.add("hidden");
+        resultPage.classList.remove("hidden");
+
+    }, 700)
+   
 });
 
