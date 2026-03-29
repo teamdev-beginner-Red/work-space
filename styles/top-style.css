@@ -1,0 +1,46 @@
+/* おみくじ画像を小さくする */
+.omikuji-image {
+    width: 200px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 中央寄せ */
+}
+
+/* ボタンとリンクを縦に中央揃え */
+.button-area, .link-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* 各要素の間隔 */
+}
+
+/* リンクのテキストを赤で下線に */
+.link-text {
+    color: #dc3545;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* タイトルと画像の間に余白 */
+h1 {
+    margin-bottom: 30px;
+}
+
+/* おみくじ画像の上下に余白 */
+.omikuji-image {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 30px auto; /* ← 上下に余白追加 */
+}
+
+/* ボタンの上に余白 */
+.button-area {
+    margin-top: 20px;
+}
+
+/* リンクエリアの上に余白 */
+.link-area {
+    margin-top: 15px;
+}
