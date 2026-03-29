@@ -29,7 +29,7 @@ function makeOmikuji(omikuji) {
     let luckyLangDiv = document.createElement("div");
     //タイトル
     let luckyLang = document.createElement("h4");
-    luckyLang.innerHTML = "ラッキー言語";
+    luckyLang.innerHTML = "🌸ラッキー言語🌸";
     //内容
     let luckyLangContent = document.createElement("p");
     luckyLangContent.innerHTML = omikuji.luckyLang;
@@ -43,7 +43,7 @@ function makeOmikuji(omikuji) {
     let luckyDatabaseDiv = document.createElement("div");
     //タイトル
     let luckyDatabase = document.createElement("h4");
-    luckyDatabase.innerHTML = "ラッキーデータベース";
+    luckyDatabase.innerHTML = "🌸ラッキーデータベース🌸";
     //内容
     let luckyDatabaseContent = document.createElement("p");
     luckyDatabaseContent.innerHTML = omikuji.luckyDatabase;
@@ -57,7 +57,7 @@ function makeOmikuji(omikuji) {
     let luckyEditaDiv = document.createElement("div");
     //タイトル
     let luckyEdita = document.createElement("h4");
-    luckyEdita.innerHTML = "ラッキーエディタ";
+    luckyEdita.innerHTML = "🌸ラッキーエディタ🌸";
     //内容
     let luckyEditaContent = document.createElement("p");
     luckyEditaContent.innerHTML = omikuji.luckyEdita;
@@ -123,30 +123,95 @@ class omikuji {
 
     // 運勢ごとの説明文
     getContent(fortune) {
-        const contents = {
-            "大吉": "大吉内容",
-            "吉": "吉内容",
-            "中吉": "中吉内容",
-            "小吉": "小吉内容",
-            "末吉": "末吉内容",
-            "凶": "凶内容",
-            "大凶": "大凶内容"
-        };
-        return contents[fortune];
+        switch(fortune){
+            case "大吉":
+                const daikichi = ["「誰も思いつかなかったエレガントなアルゴリズムが、深夜の静寂の中で完成する。」" , "「あなたのプルリクエストが、一切の指摘なく『LGTM』で埋め尽くされる。」"];
+                return daikichi[getRandomNumber(daikichi.length)];
+                break;
+
+            case "吉":
+                const kichi = ["「新しい技術スタックのドキュメントを読んだとき、スッと脳内にアーキテクチャが描ける。」" , "「数時間悩んだバグの正体が、タイポ（打ち間違い）ではなく、深い仕様の理解によって解明される。」"];
+                return kichi[getRandomNumber(kichi.length)];
+                break;
+
+            case "中吉":
+                const chukichi = ["「プルリクエストに指摘は入るが、それはあなたの技術を一段階引き上げる良質なアドバイスである。」" , "「コードの書き直しは発生する。しかし、それはより良い設計への近道である。」"];
+                return chukichi[getRandomNumber(chukichi.length)];
+                break;
+
+            case "小吉":
+                const shokichi = ["「仕様変更の依頼が来るが、ちょうどその部分のコードを書き始める直前だったため、工数は増えない。」" , "「原因不明の挙動に悩まされるが、PCを再起動したら直る。深追いしなくて済む幸運。」"];
+                return shokichi[getRandomNumber(shokichi.length)];
+                break;
+
+            case "末吉":
+                const suekichi = ["「深夜まで解決しなかったバグが、翌朝のデバッグで『なぜこんなことに悩んでいたのか』と思うほどあっけなく解明される。」" , "「「一度書いたコードを全捨てすることになるが、二度目に書くコードは驚くほど洗練されたものになる。」"];
+                return suekichi[getRandomNumber(suekichi.length)];
+                break;
+
+            case "凶":
+                const kyo = ["「Gitのコンフリクトが100ファイル以上発生。しかも、競合相手は先週退職したメンバーのコードだ。」" , "「昨日まで動いていたコードが、一行も変えていないのに動かなくなる。環境の魔物に魅入られている。」"];
+                return kyo[getRandomNumber(kyo.length)];
+                break;
+
+            case "大凶":
+                const daikyo = ["「「世界規模のクラウドサービスがダウン。あなたのコードに落ち度はないが、できることも何一つない。」" , "「数年かけて育てた秘伝のソースコードが、新人の git push --force によって宇宙の彼方へ消え去る。」"];
+                return daikyo[getRandomNumber(daikyo.length)];
+                break;
+
+            default:
+                return "「もう一度、お試しください。」";
+                break;
+            
+        }
+
     }
 
     // 運勢ごとの画像パス
     getImgUrl(fortune) {
-        const images = {
-            "大吉": "img/daikichi.png",
-            "吉": "img/kichi.png",
-            "中吉": "img/chukichi.png",
-            "小吉": "img/shokichi.png",
-            "末吉": "img/suekichi.png",
-            "凶": "img/kyo.png",
-            "大凶": "img/daikyo.png"
-        };
-        return images[fortune];
+        
+        switch(fortune){
+            case "大吉":
+                const daikichiUrl = ["img/daikichi1.png", "img/daikichi2.png"];
+                return daikichiUrl[getRandomNumber(daikichiUrl.length)];
+                break;
+
+            case "吉":
+                const kichiUrl = ["img/kichi1.png" , "img/kichi2.png"];
+                return kichiUrl[getRandomNumber(kichiUrl.length)];
+                break;
+
+            case "中吉":
+                const chukichiUrl = ["img/chukichi1.png" , "img/chukichi2.png"];
+                return chukichiUrl[getRandomNumber(chukichiUrl.length)];
+                break;
+
+            case "小吉":
+                const shokichiUrl = ["img/shokichi1.png", "img/shokichi2.png",];
+                return shokichiUrl[getRandomNumber(shokichiUrl.length)];
+                break;
+
+            case "末吉":
+                const suekichiUrl = ["img/suekichi1.png" , "img/suekichi2.png"];
+                return suekichiUrl[getRandomNumber(suekichiUrl.length)];
+                break;
+
+            case "凶":
+                const kyoUrl = ["img/kyo1.png" , "img/kyo2.png"];
+                return kyoUrl[getRandomNumber(kyoUrl.length)];
+                break;
+
+            case "大凶":
+                const daikyoUrl = ["img/daikyo1.png" , "img/daikyo2.png"];
+                return daikyoUrl[getRandomNumber(daikyoUrl.length)];
+                break;
+
+            default:
+                return "";
+                break;
+            
+        }
+                
     }
 }
 

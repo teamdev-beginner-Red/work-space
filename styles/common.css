@@ -108,7 +108,7 @@ ul.developers a:hover{
 }
 /* 結果ページ */
 #result-page h1 {
-    font-size: 2.5rem;
+    font-size: 5rem;
     margin: 10px 0;
 }
 
@@ -124,7 +124,7 @@ ul.developers a:hover{
 }
 
 #result-page h4 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 12px 0 2px;
     border-bottom: 1px solid #dc3545;
 }
